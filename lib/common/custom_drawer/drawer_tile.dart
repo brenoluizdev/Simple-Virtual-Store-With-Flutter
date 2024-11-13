@@ -7,10 +7,16 @@ class DrawerTile extends StatelessWidget {
   final String title;
   final int page;
 
-  const DrawerTile({super.key, required this.iconData, required this.title, required this.page});
+  const DrawerTile(
+      {super.key,
+      required this.iconData,
+      required this.title,
+      required this.page});
 
   @override
   Widget build(BuildContext context) {
+    final int curPage = context.watch<PageManager>().page;
+
     return InkWell(
       onTap: () {
         context.read<PageManager>().setPage(page);
@@ -21,11 +27,11 @@ class DrawerTile extends StatelessWidget {
           children: [
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 32),
-              child: Icon(iconData, color: Colors.grey[700], size: 32),
+              child: Icon(iconData, color: curPage == page ? Colors.red : Colors.grey[700], size: 32),
             ),
             Text(
               title,
-              style: TextStyle(color: Colors.grey[700], fontSize: 16),
+              style: TextStyle(color: curPage == page ? Colors.red : Colors.grey[700], fontSize: 16),
             ),
           ],
         ),
