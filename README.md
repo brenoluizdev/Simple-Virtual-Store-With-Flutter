@@ -1,3 +1,5 @@
+![Banner](assets/images/banner.jpg)
+
 # 🛒 Simple Virtual Store With Flutter
 
 Welcome to the **Simple Virtual Store With Flutter** project! This is a basic e-commerce application built with Flutter, designed to offer a straightforward shopping experience. It’s a great starting point for developers looking to explore the essentials of creating a virtual store using Flutter.
